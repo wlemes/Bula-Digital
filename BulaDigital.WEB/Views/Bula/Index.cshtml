@@ -31,6 +31,7 @@
             <th>Nr.Transacao</th>
             <th>Data</th>
             <th>Processo</th>
+            <th>Bula do Paciente</th>
         </tr>
         @foreach (var item in Model.content)
         {
@@ -44,6 +45,7 @@
                 <td>@item.numeroTransacao</td>
                 <td>@item.data</td>
                 <td>@item.numProcesso</td>
+                <td><a href="https://consultas.anvisa.gov.br/api/consulta/medicamentos/arquivo/bula/parecer/@item.idBulaPacienteProtegido/?Authorization=">Download</a></td>
             </tr>
         }
     </table>
