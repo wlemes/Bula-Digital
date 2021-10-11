@@ -1,0 +1,50 @@
+﻿@model BulaDigital.WEB.Models.AnvisaResponse
+
+<form method="post">
+    <section>
+        <article>
+            <div class=col-4>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Nome</span>
+                    </div>
+                    <input name="termo" type="text" class="form-control" placeholder="Nome da bula" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class='col-4'>
+                <input type="submit" value='Pesquisar' class="btn btn-primary" />
+            </div>
+        </article>
+    </section>
+</form>
+
+@if(Model != null)
+{
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Nr.Registro</th>
+            <th>Nome</th>
+            <th>Expediente</th>
+            <th>Razao Social</th>
+            <th>CNPJ</th>
+            <th>Nr.Transacao</th>
+            <th>Data</th>
+            <th>Processo</th>
+        </tr>
+        @foreach (var item in Model.content)
+        {
+            <tr>
+                <td>@item.idProduto</td>
+                <td>@item.numeroRegistro</td>
+                <td>@item.nomeProduto</td>
+                <td>@item.expediente</td>
+                <td>@item.razaoSocial</td>
+                <td>@item.cnpj</td>
+                <td>@item.numeroTransacao</td>
+                <td>@item.data</td>
+                <td>@item.numProcesso</td>
+            </tr>
+        }
+    </table>
+}
