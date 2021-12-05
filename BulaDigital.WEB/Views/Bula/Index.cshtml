@@ -18,6 +18,21 @@
     </section>
 </form>
 
+@if(TempData["mensagemErro"] != null)
+    {
+        <div class="field-error">
+            @TempData["mensagemErro"]
+        </div>
+    }
+
+    
+@if(TempData["mensagemErro2"] != null)
+    {
+        <div class="field-error">
+            @TempData["mensagemErro2"]
+        </div>
+    }
+
 
 @if(Model != null)
 {
@@ -50,6 +65,8 @@
   </tbody>
 </table>
 }
+
+
 </body>
       <script>
       (function(d, w, c) {
