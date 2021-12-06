@@ -60,6 +60,7 @@ html {
 body {
     margin-bottom: 60px;
     font-family: 'Roboto', sans-serif;
+    background: url(../imagens/fundo.png);
 }
 
 table {
@@ -122,11 +123,11 @@ table {
     background-color: #212529;
 }
 
-.imagemFundo {
+/*.imagemFundo {
     background: url(../imagens/fundo.png);
     height: fit-content;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-}
+}*/

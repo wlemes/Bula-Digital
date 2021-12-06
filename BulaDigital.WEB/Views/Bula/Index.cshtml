@@ -1,83 +1,76 @@
 ﻿@model BulaDigital.WEB.Models.AnvisaResponse
 <body>
-    <p class="info">A bula digital é responsável por simplificar e compartilhar as informações mais relevantes dos medicamentos, de maneira simples e de fácil acesso. </p>
-<form method="post">
-    <section>
-        <article>
-            
+    <font color="white"><p class="info">A bula digital é responsável por simplificar e compartilhar as informações mais relevantes dos medicamentos, de maneira simples e de fácil acesso. </p></font>
+    <form method="post">
+        <section>
+            <article>
+
                 <div class="input-group mb-3">
                     <input name="termo" type="text" class="form-control" placeholder="Insira o nome do medicamento..." aria-label="Username" aria-describedby="basic-addon1">
-                
-                <div class="input-group-append">
-                <input type="submit" value='Pesquisar' class="btn btn-primary" />
-                </div>
-                </div>
-           
-            
-    
-        </article>
-    </section>
-</form>
 
-@if(TempData["mensagemErro"] != null)
+                    <div class="input-group-append">
+                        <input type="submit" value='Pesquisar' class="btn btn-primary" />
+                    </div>
+                </div>
+
+            </article>
+        </section>
+    </form>
+
+    @if (TempData["mensagemErro"] != null)
     {
         <div class="erro">
             @TempData["mensagemErro"]
         </div>
     }
-
-    
-@if(TempData["mensagemErro2"] != null)
+    @if (TempData["mensagemErro2"] != null)
     {
         <div class="erro">
             @TempData["mensagemErro2"]
         </div>
     }
+    @if (Model != null)
+    {
+        <table class="table table-striped table-borderless table-dark">
+            <thead>
+                <tr>
 
+                    <th><h4>Nome</h4></th>
 
-@if(Model != null)
-{
-<table class="table table-striped table-borderless table-dark">
-  <thead>
-    <tr>
-        
-            <th><h4>Nome</h4></th> 
+                    <th><h4>Fabricante</h4></th>
 
-            <th><h4>Fabricante</h4></th>
+                    <th><h4>Data</h4></th>
 
-            <th><h4>Data</h4></th>
+                    <th><h4>Bula</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.content)
+                {
+                    <tr>
 
-            <th><h4>Bula</h4></th>
-    </tr>
-  </thead>
-  <tbody>
-           @foreach (var item in Model.content)
-        {
-            <tr>
+                        <td>@item.nomeProduto</td>
 
-                <td>@item.nomeProduto</td>
+                        <td>@item.razaoSocial</td>
+                        <td>@item.data</td>
 
-                <td>@item.razaoSocial</td>
-                <td>@item.data</td>
-
-                <td><a href="https://consultas.anvisa.gov.br/api/consulta/medicamentos/arquivo/bula/parecer/@item.idBulaPacienteProtegido/?Authorization=" class="btn btn-info"><span class="glyphicon glyphicon-save"></span>Download</a></td>
-            </tr>
-        }
-  </tbody>
-</table>
-}
-
+                        <td><a href="https://consultas.anvisa.gov.br/api/consulta/medicamentos/arquivo/bula/parecer/@item.idBulaPacienteProtegido/?Authorization=" class="btn btn-info"><span class="glyphicon glyphicon-save"></span>Download</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 
 </body>
-      <script>
-      (function(d, w, c) {
-          w.ChatraID = 'z26vLtQKgM7wYJxjf';
-          var s = d.createElement('script');
-          w[c] = w[c] || function() {
-              (w[c].q = w[c].q || []).push(arguments);
-          };
-          s.async = true;
-          s.src = 'https://call.chatra.io/chatra.js';
-          if (d.head) d.head.appendChild(s);
-      })(document, window, 'Chatra');
-  </script>
+<script>
+    (function(d, w, c) {
+        w.ChatraID = 'z26vLtQKgM7wYJxjf';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
