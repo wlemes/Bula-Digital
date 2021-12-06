@@ -57,6 +57,7 @@ html {
 
 body {
     margin-bottom: 60px;
+    background-image: url(../imagens/fundo.png);
 }
 
 table {
@@ -111,3 +112,5 @@ table {
     line-height: 60px;
     background-color: #212529;
 }
+
+''''
