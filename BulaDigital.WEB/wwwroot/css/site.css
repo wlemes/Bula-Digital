@@ -1,6 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 a.navbar-brand {
   white-space: normal;
@@ -57,7 +59,7 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-image: url(../imagens/fundo.png);
+    font-family: 'Roboto', sans-serif;
 }
 
 table {
@@ -104,6 +106,13 @@ table {
         border-bottom-right-radius: 10px;
     }
 
+.info{
+    /* information about site */
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -113,4 +122,11 @@ table {
     background-color: #212529;
 }
 
-''''
+.imagemFundo {
+    background: url(../imagens/fundo.png);
+    height: fit-content;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

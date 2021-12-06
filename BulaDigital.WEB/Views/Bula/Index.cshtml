@@ -1,11 +1,12 @@
 ﻿@model BulaDigital.WEB.Models.AnvisaResponse
 <body>
+    <p class="info">A bula digital é responsável por simplificar e compartilhar as informações mais relevantes dos medicamentos, de maneira simples e de fácil acesso. </p>
 <form method="post">
     <section>
         <article>
             
                 <div class="input-group mb-3">
-                    <input name="termo" type="text" class="form-control" placeholder="DIGITE O NOME DO MEDICAMENTO . . ." aria-label="Username" aria-describedby="basic-addon1">
+                    <input name="termo" type="text" class="form-control" placeholder="Insira o nome do medicamento..." aria-label="Username" aria-describedby="basic-addon1">
                 
                 <div class="input-group-append">
                 <input type="submit" value='Pesquisar' class="btn btn-primary" />
@@ -20,7 +21,7 @@
 
 @if(TempData["mensagemErro"] != null)
     {
-        <div class="field-error">
+        <div class="erro">
             @TempData["mensagemErro"]
         </div>
     }
@@ -28,7 +29,7 @@
     
 @if(TempData["mensagemErro2"] != null)
     {
-        <div class="field-error">
+        <div class="erro">
             @TempData["mensagemErro2"]
         </div>
     }

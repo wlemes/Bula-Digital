@@ -26,7 +26,7 @@ namespace BulaDigital.WEB.Controllers
                 //Define request data format
                 if (termo.Contains("'") || termo.Contains("--") || termo.Contains(";") || termo.Contains("=") || termo.Contains("<") || termo.Contains("/"))
                 {
-                    TempData["mensagemErro"] = "Por favor, não utilize caracteres especiais no campo de busca.";
+                    TempData["mensagemErro"] = "⚠️ Por favor, não utilize caracteres especiais no campo de busca.";
                     return RedirectToAction("Index");
                 }
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -43,11 +43,12 @@ namespace BulaDigital.WEB.Controllers
                 // if totalElements is 0
                 if (EmpInfo.totalElements == 0)
                 {
-                    TempData["mensagemErro2"] = "Nenhum medicamento encontrado.";
+                    TempData["mensagemErro2"] = "⚠️ Ops, parece que nenhum medicamento foi encontrado, digite novamente!";
                     return RedirectToAction("Index");
                 }
                 //returning the employee list to view
                 return View(EmpInfo);
+
             }
         }
 
